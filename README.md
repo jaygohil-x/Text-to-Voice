@@ -1,19 +1,122 @@
-Text-to-Voice Generator using HTML, CSS, and JavaScript<br>
-<p>Welcome to the Text-to-Voice Generator project! This application allows users to convert text input into speech output using a simplistic interface built with HTML, CSS, and JavaScript. By integrating these fundamental web technologies, this tool aims to showcase the seamless synthesis of text-to-speech functionalities in a user-friendly manner.</p>
+# 🎙️ Text To Voice Converter
 
-Overview<br>
-The primary objective of this project is to provide a straightforward yet functional tool for converting text into audible speech. By leveraging HTML for structure, CSS for styling, and JavaScript for the text-to-voice functionality, this application offers an intuitive and accessible platform for users to generate speech from typed text.
+A sleek and simple web application that converts text to speech with multiple voice options. Built with vanilla JavaScript using the Web Speech API.
 
-Features<br>
-Effortless Text-to-Speech Conversion: Convert typed text into audible speech effortlessly.<br>
-Simple and Intuitive User Interface: Designed for ease of use and accessibility.<br>
-HTML, CSS, and JavaScript Implementation: Built using these core web technologies for transparency and simplicity.<br>
-Real-Time Voice Generation: Generates speech instantly upon inputting text.<br>
+![Text To Voice Converter](images/demo.jpg)
 
-Usage<br>
-To utilize this Text-to-Voice Generator, clone or download the repository and open the index.html file in any modern web browser. Once opened, simply enter the desired text into the provided input field and click the 'Generate' or 'Speak' button to hear the converted speech.
+## ✨ Features
 
-Feel free to modify or expand upon this README to include specific instructions, additional features, or any pertinent details tailored to your project's goals and functionalities.
+- **Multiple Voice Options**: Choose from various system voices
+- **Clean Interface**: Modern, cyberpunk-inspired design
+- **Instant Conversion**: Real-time text-to-speech conversion
+- **Responsive Design**: Works on both desktop and mobile devices
+- **Easy to Use**: Simple paste and play functionality
 
-Build by HasihhaOnline
-www.hasithaonline.com
+## 💻 Tech Stack
+
+- HTML5
+- CSS3 with custom animations
+- Vanilla JavaScript
+- Web Speech API
+- Google Fonts (Audiowide, Press Start 2P)
+
+## 📂 Project Structure
+
+```
+text-to-voice/
+│
+├── index.html
+├── edit.css
+├── script.js
+└── images/
+    ├── play.png
+    └── bg.jpg
+```
+
+## 🛠️ How It Works
+
+The application uses the Web Speech API to convert text to speech:
+
+```javascript
+// Initialize speech synthesis
+let speech = new SpeechSynthesisUtterance();
+let voices = [];
+
+// Load available voices
+window.speechSynthesis.onvoiceschanged = () => {
+   voices = window.speechSynthesis.getVoices();
+   speech.voice = voices[0];
+   // Populate voice selection dropdown
+   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+};
+```
+
+## 📖 Usage
+
+1. Open `index.html` in your web browser
+2. Type or paste text into the textarea
+3. Select your preferred voice from the dropdown
+4. Click "Listen" to hear the text spoken
+
+## 🎯 Key Components
+
+### HTML Structure
+```html
+<div class="hero">
+    <div class="top">
+        <h1>Text To Voice <span>Converter</span></h1>
+    </div>
+    <textarea placeholder="Write or Paste anything here..."></textarea>
+    <div class="row">
+        <select></select>
+        <button><img src="images/play.png"> Listen </button>
+    </div>
+</div>
+```
+
+### Voice Selection
+The application automatically detects and loads all available system voices into the dropdown menu. Users can switch between different voices at any time.
+
+### Speech Synthesis
+Text-to-speech conversion is handled by the Web Speech API, which provides natural-sounding voice output across different browsers and platforms.
+
+## 🌐 Browser Compatibility
+
+Works best in:
+- Google Chrome
+- Microsoft Edge
+- Safari
+- Firefox
+
+> Note: Voice availability may vary depending on your system and browser.
+
+## ⚙️ Setup
+
+1. Download the project files
+2. Ensure all files are in the same directory
+3. Open `index.html` in your web browser
+
+No additional installation or setup required!
+
+## 🐛 Troubleshooting
+
+**No voices appearing in dropdown?**
+- Make sure you're using a supported browser
+- Allow the page to fully load
+- Check if your browser supports Web Speech API
+
+**No sound playing?**
+- Check your system volume
+- Ensure no other apps are blocking audio
+- Try refreshing the page
+
+## 👨‍💻 Developer
+
+Built by [Jay Gohil](https://hasithaonline.com/)
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+---
+⭐ Star this repository if you find it helpful!
