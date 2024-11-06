@@ -112,7 +112,7 @@ No additional installation or setup required!
 
 ## 👨‍💻 Developer
 
-Built by [Jay Gohil](https://hasithaonline.com/)
+Built by [Jay Gohil](https://github.com/jaygohil-x)
 
 ## 📝 License
 
